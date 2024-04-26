@@ -19,21 +19,21 @@ Para ejecutar el ejemplo de FuzzyCLIPS, se deberá, desde un la carpeta raiz, ab
 > (run)
 
 Esto cargará y ejecutará el programa. Que empezará a preguntar por los valores de cada nodo y el factor de certeza. 
-> **fzclips:** which node are you interested in? (a-j or q to quit)
-> **usuario:** f
-> **fzclips:** Please enter a value for node: a
-> **usuario:** 12
-> **fzclips:** Enter Certainty Factor for node (0.0 to 1.0): a
-> **usuario:** 0.4
-> **fzclips:** Please enter a value for node: b
-> **usuario:** 64
-> **fzclips:** Enter Certainty Factor for node (0.0 to 1.0): b
-> **usuario:** 0.9
-> **fzclips:** Enter Certainty Factor for node (0.0 to 1.0): c
-> **usuario:** 34 
-> **fzclips:** Enter Certainty Factor for node (0.0 to 1.0): c
-> **usuario:** 0.4
-> **fzclips:**  The output value at node f is 108 with certainty of 0.4
+> **fzclips:** which node are you interested in? (a-j or q to quit)  
+> **usuario:** f  
+> **fzclips:** Please enter a value for node: a  
+> **usuario:** 12  
+> **fzclips:** Enter Certainty Factor for node (0.0 to 1.0): a  
+> **usuario:** 0.4  
+> **fzclips:** Please enter a value for node: b  
+> **usuario:** 64  
+> **fzclips:** Enter Certainty Factor for node (0.0 to 1.0): b  
+> **usuario:** 0.9  
+> **fzclips:** Enter Certainty Factor for node (0.0 to 1.0): c  
+> **usuario:** 34   
+> **fzclips:** Enter Certainty Factor for node (0.0 to 1.0): c  
+> **usuario:** 0.4  
+> **fzclips:**  The output value at node f is 108 with certainty of 0.4  
 
 # Ejecutar ejemplo Python
 Para ejecutar el programa en Python, deberá instalar scikit-fuzzy: **`pip install scikit-fuzzy`.** Y seguir los siguientes pasos desde una terminal **PowerShell**:
@@ -41,19 +41,19 @@ Para ejecutar el programa en Python, deberá instalar scikit-fuzzy: **`pip insta
 * Ejecutar `python fzbackward.py`.
 
 Esto cargará y ejecutará el programa. Que empezará a preguntar por los valores de cada nodo y el factor de certeza. 
-> **python:** which node are you interested in? (a-j or q to quit)
-> **usuario:** f
-> **python:** Please enter a value for node: a
-> **usuario:** 12
-> **python:** Enter Certainty Factor for node (0.0 to 1.0): a
-> **usuario:** 0.4
-> **python:** Please enter a value for node: b
-> **usuario:** 64
-> **python:** Enter Certainty Factor for node (0.0 to 1.0): b
-> **usuario:** 0.9
-> **python:** Enter Certainty Factor for node (0.0 to 1.0): c
-> **usuario:** 34 
-> **python:** Enter Certainty Factor for node (0.0 to 1.0): c
-> **usuario:** 0.4
-> **python:**  The output value at node f is 108 with certainty of 0.4
+> **python:** which node are you interested in? (a-j or q to quit)  
+> **usuario:** f  
+> **python:** Please enter a value for node: a   
+> **usuario:** 12  
+> **python:** Enter Certainty Factor for node (0.0 to 1.0): a  
+> **usuario:** 0.4  
+> **python:** Please enter a value for node: b  
+> **usuario:** 64  
+> **python:** Enter Certainty Factor for node (0.0 to 1.0): b  
+> **usuario:** 0.9  
+> **python:** Enter Certainty Factor for node (0.0 to 1.0): c  
+> **usuario:** 34   
+> **python:** Enter Certainty Factor for node (0.0 to 1.0): c  
+> **usuario:** 0.4  
+> **python:**  The output value at node f is 108 with certainty of 0.4  
 
