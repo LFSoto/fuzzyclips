@@ -1,3 +1,6 @@
+import numpy as np
+import skfuzzy as fuzz
+
 class Node:
     def __init__(self, name, type_):
         self.name = name
@@ -10,14 +13,29 @@ class Node:
         self.inputs[port] = (value, certainty)
 
     def compute_output(self):
+        # Generate a universe of discourse for certainty factor (0 to 1)
+        universe = np.linspace(0, 1, 101)
+        
         if self.type == 'adder':
             values, certainties = zip(*self.inputs.values())
-            self.output = sum(values)
-            self.certainty = min(certainties)  # Assuming the minimum certainty for simplicity
+            self.output = np.sum(values)
+            # Start with a certainty of 1 and reduce it using fuzzy AND for each input certainty
+            aggregate_certainty = np.ones_like(universe)
+            for certainty in certainties:
+                temp_certainty = np.ones_like(universe) * certainty
+                aggregate_certainty = fuzz.fuzzy_and(universe, aggregate_certainty, universe, temp_certainty)[1]
+            self.certainty = aggregate_certainty.min()
+            
         elif self.type == 'multiplier':
             values, certainties = zip(*self.inputs.values())
-            self.output = values[0] * values[1]
-            self.certainty = min(certainties)
+            self.output = np.prod(values)
+            # Start with a certainty of 0 and increase it using fuzzy OR for each input certainty
+            aggregate_certainty = np.zeros_like(universe)
+            for certainty in certainties:
+                temp_certainty = np.ones_like(universe) * certainty
+                aggregate_certainty = fuzz.fuzzy_or(universe, aggregate_certainty, universe, temp_certainty)[1]
+            self.certainty = aggregate_certainty.max()
+
         return self.output
 
 class Circuit:
