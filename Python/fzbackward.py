@@ -13,13 +13,12 @@ class Node:
         self.inputs[port] = (value, certainty)
 
     def compute_output(self):
-        # Generate a universe of discourse for certainty factor (0 to 1)
+        # Generar rango para el factor de certeza (0 to 1)
         universe = np.linspace(0, 1, 101)
         
         if self.type == 'adder':
             values, certainties = zip(*self.inputs.values())
             self.output = np.sum(values)
-            # Start with a certainty of 1 and reduce it using fuzzy AND for each input certainty
             aggregate_certainty = np.ones_like(universe)
             for certainty in certainties:
                 temp_certainty = np.ones_like(universe) * certainty
@@ -29,7 +28,6 @@ class Node:
         elif self.type == 'multiplier':
             values, certainties = zip(*self.inputs.values())
             self.output = np.prod(values)
-            # Start with a certainty of 0 and increase it using fuzzy OR for each input certainty
             aggregate_certainty = np.zeros_like(universe)
             for certainty in certainties:
                 temp_certainty = np.ones_like(universe) * certainty
@@ -52,14 +50,14 @@ class Circuit:
     def request_value(self, node):
         value = float(input(f"Please enter a value for node {node}: "))
         certainty = float(input("Enter Certainty Factor for node (0.0 to 1.0): "))
-        certainty = max(0.0, min(1.0, certainty))  # Clamp certainty to [0.0, 1.0]
+        certainty = max(0.0, min(1.0, certainty))
         return value, certainty
 
     def evaluate(self, node):
         if self.nodes[node].type == 'input':
             value, certainty = self.request_value(node)
             self.nodes[node].set_input(value, 1, certainty)
-            self.nodes[node].output = value  # Direct input to output for input nodes
+            self.nodes[node].output = value  
             self.nodes[node].certainty = certainty
         else:
             for from_node, to_node, port in self.connections:
@@ -81,9 +79,8 @@ class Circuit:
             print("Node not found.")
         return True
 
-# Example usage
 circuit = Circuit()
-# Adding nodes and their types
+# Agregando los nodos y sus tipos
 nodes_info = {
     'a': 'input', 'b': 'input', 'c': 'input', 'd': 'input',
     'e': 'adder', 'f': 'adder', 'g': 'multiplier',
@@ -92,7 +89,7 @@ nodes_info = {
 for node, type_ in nodes_info.items():
     circuit.add_node(node, type_)
 
-# Adding connections
+# Agregando conexiones
 connections_info = [
     ('a', 'f', 1), ('b', 'e', 1), ('c', 'e', 2), ('d', 'g', 2),
     ('e', 'f', 2), ('e', 'g', 1), ('f', 'i', 1), ('g', 'j', 1)
@@ -100,6 +97,5 @@ connections_info = [
 for from_node, to_node, port in connections_info:
     circuit.add_connection(from_node, to_node, port)
 
-# Interactive query
 while circuit.query_node():
     pass
