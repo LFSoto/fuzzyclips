@@ -2,12 +2,12 @@
 * Compilador de C (necesario si quiere compilar el código de FuzzyCLIPS)
 * Python 3.11.9
 
-# Crear ejecutable de FuzzyCLIPS
+# Crear el ejecutable de FuzzyCLIPS
 
 Como parte de la entrega se provee un archivo `.exe` con el ejecutable de FuzzyCLIPS. Sin embargo si desea compilarlo se entrega también un fork del código original de FuzzyCLIPS con el que se generará el `.exe`, para **Windows** deberá seguir los siguientes pasos:
 * Instalar [Visual Studio](https://visualstudio.microsoft.com/es/downloads/).
 * Abrir una terminal de **developer Command Prompt for VS 2022**.
-* Ejecutar `cl` para asegurarse de que haya un compilador de C instalado.
+* Ejecutar el comando `cl` en el developer Command Prompt para asegurarse de que haya un compilador de C instalado.
 * Desde la terminal Command Promp, ir al folder:   `C:\Users\soto2\OneDrive\Escritorio\fuzzyclips\FuzzyCLIPS Fork\source`
 * Ejecutar: `cl /Fefz_clips.exe *.c.` para generar el .exe
 
