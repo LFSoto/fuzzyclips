@@ -25,12 +25,13 @@ Como parte de la entrega se provee un archivo `.exe` con el ejecutable de FuzzyC
 
 # Ejecutar ejemplo FuzzyCLIPS
 
-Para ejecutar el ejemplo de FuzzyCLIPS, se deberá, desde un la carpeta raiz, abrir un **PowerShell** y correr `cd FuzzyCLIPS`, luego `fz_clips.exe`. Esto levantará una terminal de FuzzyCLIPS, donde deberá cargar el archivo `.clp`, y ejecutar los comandos:  
+Para ejecutar el ejemplo de FuzzyCLIPS, se deberá, desde un la carpeta raiz, abrir un **PowerShell** y correr `cd FuzzyCLIPS`, luego `fz_clips.exe`. Esto levantará una terminal de FuzzyCLIPS, donde deberá cargar el archivo `.clp`, y ejecutar los comandos (respetando paréntesis):  
 > (load fzbackward.clp)  
 > (reset)  
 > (run)  
 
-Esto cargará y ejecutará el programa. Que empezará a preguntar por los valores de cada nodo y el factor de certeza. 
+Esto cargará y ejecutará el programa. Que empezará a preguntar por los valores de cada nodo y el factor de certeza.  
+Ejemnplo:  
 > **fzclips:** which node are you interested in? (a-j or q to quit)  
 > **usuario:** f  
 > **fzclips:** Please enter a value for node: a  
@@ -52,7 +53,8 @@ Para ejecutar el programa en Python, deberá instalar scikit-fuzzy: **`pip insta
 * Desde el directorio raíz, ir a la carpeta `Python`.
 * Ejecutar `python fzbackward.py`.
 
-Esto cargará y ejecutará el programa. Que empezará a preguntar por los valores de cada nodo y el factor de certeza. 
+Esto cargará y ejecutará el programa. Que empezará a preguntar por los valores de cada nodo y el factor de certeza.  
+Ejemnplo:  
 > **python:** which node are you interested in? (a-j or q to quit)  
 > **usuario:** f  
 > **python:** Please enter a value for node: a   
