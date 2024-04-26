@@ -13,10 +13,10 @@ Como parte de la entrega se provee un archivo `.exe` con el ejecutable de FuzzyC
 
 # Ejecutar ejemplo FuzzyCLIPS
 
-Para ejecutar el ejemplo de FuzzyCLIPS, se deberá, desde un la carpeta raiz, abrir un **PowerShell** y correr `fz_clips.exe`. Esto levantará una terminal de FuzzyCLIPS, donde deberá cargar el archivo `.clp`, y ejecutar los comandos: 
-> (load fzbackward.clp)
-> (reset)
-> (run)
+Para ejecutar el ejemplo de FuzzyCLIPS, se deberá, desde un la carpeta raiz, abrir un **PowerShell** y correr `fz_clips.exe`. Esto levantará una terminal de FuzzyCLIPS, donde deberá cargar el archivo `.clp`, y ejecutar los comandos:  
+> (load fzbackward.clp)  
+> (reset)  
+> (run)  
 
 Esto cargará y ejecutará el programa. Que empezará a preguntar por los valores de cada nodo y el factor de certeza. 
 > **fzclips:** which node are you interested in? (a-j or q to quit)  
